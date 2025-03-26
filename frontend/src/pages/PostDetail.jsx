@@ -18,7 +18,7 @@ const PostDetail = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:5000/api/posts/${postId}`);
+                const { data } = await axios.get(`https://stumptalk.onrender.com/posts/${postId}`);
                 setPost(data);
                 setReplies(data.replies || []);
             } catch (err) {
@@ -30,7 +30,6 @@ const PostDetail = () => {
         fetchPost();
     }, [postId]);
 
-    // Function to count nested replies
     const countNestedReplies = (repliesList) => {
         let count = repliesList.length;
         repliesList.forEach(reply => {
@@ -49,7 +48,7 @@ const PostDetail = () => {
         }
         setError("");
         try {
-            const { data } = await axios.post(`http://localhost:5000/api/posts/${postId}/reply`, {
+            const { data } = await axios.post(`https://stumptalk.onrender.com/api/posts/${postId}/reply`, {
                 username,
                 content: replyContent,
             });
@@ -62,7 +61,7 @@ const PostDetail = () => {
 
     const handleDeleteReply = async (replyId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/posts/replies/${replyId}`);
+            await axios.delete(`https://stumptalk.onrender.com/api/posts/replies/${replyId}`);
             setReplies(replies.filter((reply) => reply._id !== replyId));
         } catch (err) {
             console.error("Error deleting reply:", err);

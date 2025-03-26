@@ -15,7 +15,7 @@ const ReplyDetail = () => {
     const [username, setUsername] = useState(sessionStorage.getItem("username") || "Anonymous");
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/posts/replies/${replyId}`)
+        axios.get(`https://stumptalk.onrender.com/api/posts/replies/${replyId}`)
             .then((res) => {
                 setReply(res.data);
                 setSubReplies(res.data.replies || []);
@@ -31,7 +31,7 @@ const ReplyDetail = () => {
         }
         setError("");
         try {
-            const response = await axios.post(`http://localhost:5000/api/posts/replies/${replyId}/reply`, {
+            const response = await axios.post(`https://stumptalk.onrender.com/api/posts/replies/${replyId}/reply`, {
                 username,
                 content: replyContent,
             });
@@ -44,7 +44,7 @@ const ReplyDetail = () => {
 
     const handleDeleteReply = async (subReplyId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/posts/replies/${subReplyId}`);
+            await axios.delete(`https://stumptalk.onrender.com/api/posts/replies/${subReplyId}`);
             setSubReplies(subReplies.filter((subReply) => subReply._id !== subReplyId));
         } catch (error) {
             console.error("Error deleting reply:", error.response ? error.response.data : error.message);

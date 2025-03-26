@@ -5,10 +5,8 @@ const PlayerRanking = () => {
     const [rankings, setRankings] = useState([]);
     const [rankingTitle, setRankingTitle] = useState("Test Batsman");
 
-    const API_KEY = "67e21b5438msh9dffb14647f0b61p1d8335jsnea46a5b3d1e5";
-    const API_HOST = "cricket-live-line1.p.rapidapi.com";
-
-    // 21a1c04499mshb0835b11649435fp13cccbjsn813cf0b848c8
+    const API_KEY = process.env.PR_API_KEY;
+    const API_HOST = process.env.PR_API_HOST;
 
     const rankingOptions = [
         { id: 1, label: "Men Test Batsman" },
@@ -39,7 +37,6 @@ const PlayerRanking = () => {
             });
 
             if (!response.ok) {
-                // throw new Error(`API request failed: ${response.status}`);
             }
 
             const data = await response.json();
@@ -52,7 +49,6 @@ const PlayerRanking = () => {
             }
 
         } catch (error) {
-            // console.error("Error fetching rankings:", error);
             setRankings([]);
         }
     };

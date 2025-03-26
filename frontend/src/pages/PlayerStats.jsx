@@ -7,10 +7,8 @@ const PlayerStats = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const API_HOST = "cricket-live-line-advance.p.rapidapi.com";
-    const API_KEY = "67e21b5438msh9dffb14647f0b61p1d8335jsnea46a5b3d1e5";
-
-    // 21a1c04499mshb0835b11649435fp13cccbjsn813cf0b848c8
+    const API_HOST = process.env.PS_API_HOST;
+    const API_KEY = process.env.PS_API_KEY;
 
     const fetchPlayerID = async (playerName) => {
         setLoading(true);
@@ -19,7 +17,7 @@ const PlayerStats = () => {
 
         try {
             const response = await fetch(
-                `https://cricket-live-line-advance.p.rapidapi.com/players?paged=1&per_page=1&search=${encodeURIComponent(playerName)}`,
+                `https://${API_HOST}/players?paged=1&per_page=1&search=${encodeURIComponent(playerName)}`,
                 {
                     method: "GET",
                     headers: {
@@ -52,7 +50,7 @@ const PlayerStats = () => {
     const fetchPlayerStats = async (playerId) => {
         try {
             const response = await fetch(
-                `https://cricket-live-line-advance.p.rapidapi.com/players/${playerId}/stats`,
+                `https://${API_HOST}/players/${playerId}/stats`,
                 {
                     method: "GET",
                     headers: {
@@ -65,7 +63,6 @@ const PlayerStats = () => {
 
 
             const data = await response.json();
-            console.log("Fetched Data:", data);
             if (data?.response) {
                 setPlayerData(data.response);
             } else {
@@ -126,9 +123,7 @@ const PlayerStats = () => {
                     {type === "batting" ? "Batting Stats" : "Bowling Stats"}
                 </h3>
 
-                {/* Responsive Wrapper */}
                 <div className="w-full overflow-hidden">
-                    {/* Tablet & Desktop Table View */}
                     <table className="hidden md:table w-full text-center border-collapse border border-gray-600">
                         <thead className="bg-gray-700">
                             <tr>
@@ -157,8 +152,6 @@ const PlayerStats = () => {
                             ))}
                         </tbody>
                     </table>
-
-                    {/* Mobile & Tablet Stacked View */}
                     <div className="md:hidden space-y-4">
                         {Object.keys(formats).map((formatKey) => (
                             <div key={formatKey} className="bg-gray-800 p-3 md:p-4 rounded-lg shadow-md">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaTrash, FaRegComment } from "react-icons/fa"; // Import Reply Icon
+import { FaTrash, FaRegComment } from "react-icons/fa";
 import axios from "axios";
 import io from "socket.io-client";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ const Home = () => {
     const [username, setUsername] = useState(sessionStorage.getItem("username") || "Anonymous");
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/posts")
+        axios.get("https://stumptalk.onrender.com/api/posts")
             .then((res) => setPosts(res.data))
             .catch((err) => console.error("Error fetching posts:", err));
 
@@ -46,7 +46,7 @@ const Home = () => {
         setError("");
 
         try {
-            const response = await axios.post("http://localhost:5000/api/posts", { username, content });
+            const response = await axios.post("https://stumptalk.onrender.com/api/posts", { username, content });
             setPosts((prevPosts) => [{ ...response.data, replies: [] }, ...prevPosts]);
             setContent("");
         } catch (error) {
@@ -56,7 +56,7 @@ const Home = () => {
 
     const handleDeletePost = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/posts/${id}`);
+            await axios.delete(`https://stumptalk.onrender.com/api/posts/${id}`);
             setPosts(posts.filter(post => post._id !== id));
         } catch (err) {
             console.error("Error deleting post:", err);
