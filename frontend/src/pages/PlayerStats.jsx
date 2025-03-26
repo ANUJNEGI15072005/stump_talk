@@ -7,8 +7,8 @@ const PlayerStats = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const API_HOST = "import.meta.env.PS_API_HOST";
-    const API_KEY = "import.meta.env.PS_API_KEY";
+    const API_HOST = import.meta.env.PS_API_HOST;
+    const API_KEY = import.meta.env.PS_API_KEY;
 
     const fetchPlayerID = async (playerName) => {
         setLoading(true);
