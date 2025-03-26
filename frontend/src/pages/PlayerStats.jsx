@@ -7,8 +7,10 @@ const PlayerStats = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const API_HOST = import.meta.env.PS_API_HOST;
-    const API_KEY = import.meta.env.PS_API_KEY;
+    const API_HOST = "cricket-live-line-advance.p.rapidapi.com";
+    const API_KEY = "67e21b5438msh9dffb14647f0b61p1d8335jsnea46a5b3d1e5";
+    console.log(import.meta.env);
+
 
     const fetchPlayerID = async (playerName) => {
         setLoading(true);

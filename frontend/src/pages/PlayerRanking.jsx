@@ -5,8 +5,10 @@ const PlayerRanking = () => {
     const [rankings, setRankings] = useState([]);
     const [rankingTitle, setRankingTitle] = useState("Test Batsman");
 
-    const API_KEY = import.meta.env.PR_API_KEY;
-    const API_HOST = import.meta.env.PR_API_HOST;
+    const API_KEY = "67e21b5438msh9dffb14647f0b61p1d8335jsnea46a5b3d1e5";
+    const API_HOST = "cricket-live-line1.p.rapidapi.com";
+    console.log(import.meta.env);
+
 
     const rankingOptions = [
         { id: 1, label: "Men Test Batsman" },
