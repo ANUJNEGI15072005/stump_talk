@@ -14,7 +14,7 @@ const About = () => {
                 <h2 className="text-2xl font-bold mt-6 mb-2 text-white"> Developed By</h2>
                 <p className="text-lg text-gray-400">
                     This project was created by <span className="font-extrabold text-green-400">Anuj Negi</span>,
-                    a passionate <span className="font-bold text-white">Front-End Developer</span> with expertise in <span className="font-bold text-white">React, Tailwind CSS, and Express.js</span>.
+                    a passionate <span className="font-bold text-white">Mern Stack Developer</span> with expertise in <span className="font-bold text-white">React, Tailwind CSS, and Express.js</span>.
                 </p>
 
                 <h2 className="text-2xl font-bold mt-6 mb-2 text-white"> Connect with Anuj</h2>
