@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.dark-bg {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+body,
+html {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hidden-scrollbar {
+    scrollbar-width: none;
+}
