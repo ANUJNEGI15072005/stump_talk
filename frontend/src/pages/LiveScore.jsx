@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 const LiveScore = () => {
     const [liveMatches, setLiveMatches] = useState([]);
 
-    const API_KEY = process.env.LS_API_KEY;
-    const API_HOST = process.env.LS_API_HOST;
+    const API_KEY = "process.env.LS_API_KEY";
+    const API_HOST = "process.env.LS_API_HOST";
 
 
     const fetchLiveMatches = async () => {

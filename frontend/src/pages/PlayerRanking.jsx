@@ -5,8 +5,8 @@ const PlayerRanking = () => {
     const [rankings, setRankings] = useState([]);
     const [rankingTitle, setRankingTitle] = useState("Test Batsman");
 
-    const API_KEY = process.env.PR_API_KEY;
-    const API_HOST = process.env.PR_API_HOST;
+    const API_KEY = "process.env.PR_API_KEY";
+    const API_HOST = "process.env.PR_API_HOST";
 
     const rankingOptions = [
         { id: 1, label: "Men Test Batsman" },
