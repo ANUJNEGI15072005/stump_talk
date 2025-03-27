@@ -4,7 +4,7 @@ import axios from "axios";
 import io from "socket.io-client";
 import { Link } from "react-router-dom";
 
-const socket = io("http://localhost:5000", {
+const socket = io("https://stumptalk.onrender.com", {
     transports: ["websocket", "polling"],
     withCredentials: true,
 });

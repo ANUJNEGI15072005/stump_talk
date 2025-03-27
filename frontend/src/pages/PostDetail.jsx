@@ -18,7 +18,7 @@ const PostDetail = () => {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const { data } = await axios.get(`https://stumptalk.onrender.com/posts/${postId}`);
+                const { data } = await axios.get(`https://stumptalk.onrender.com/api/posts/${postId}`);
                 setPost(data);
                 setReplies(data.replies || []);
             } catch (err) {
