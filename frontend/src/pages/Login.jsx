@@ -12,7 +12,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = sessionStorage.getItem("token");
+        const token = localStorage.getItem("token");
         if (token) {
             navigate("/home", { replace: true });
         }
@@ -27,11 +27,11 @@ const Login = () => {
         setError("");
         try {
             const res = await axios.post("https://stumptalk.onrender.com/api/auth/login", formData);
-            sessionStorage.setItem("token", res.data.token);
+            localStorage.setItem("token", res.data.token);
             const decoded = jwtDecode(res.data.token);
 
             if (decoded.username) {
-                sessionStorage.setItem("username", decoded.username);
+                localStorage.setItem("username", decoded.username);
             } else {
                 console.error("Username missing in token");
             }

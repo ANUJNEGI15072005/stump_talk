@@ -13,7 +13,7 @@ const PostDetail = () => {
     const [error, setError] = useState("");
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [expandedPosts, setExpandedPosts] = useState({});
-    const [username, setUsername] = useState(sessionStorage.getItem("username") || "Anonymous");
+    const [username, setUsername] = useState(localStorage.getItem("username") || "Anonymous");
 
     useEffect(() => {
         const fetchPost = async () => {

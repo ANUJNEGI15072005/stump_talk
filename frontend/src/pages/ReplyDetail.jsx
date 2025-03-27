@@ -12,7 +12,7 @@ const ReplyDetail = () => {
     const [error, setError] = useState("");
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [expandedPosts, setExpandedPosts] = useState({});
-    const [username, setUsername] = useState(sessionStorage.getItem("username") || "Anonymous");
+    const [username, setUsername] = useState(localStorage.getItem("username") || "Anonymous");
 
     useEffect(() => {
         axios.get(`https://stumptalk.onrender.com/api/posts/replies/${replyId}`)
