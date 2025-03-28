@@ -103,7 +103,7 @@ const ReplyDetail = () => {
     const minHeight = getMinHeight(reply.content.length);
 
     return (
-        <div className="dark-bg fade-in p-4">
+        <div className="dark-bg fade-in">
             <div className="w-full bg-black min-h-screen text-white p-6 ">
                 <div className={`bg-gray-900 px-4 py-2 shadow-md rounded-lg mb-5 border border-gray-700 ${getMinHeight(reply.content.length)}`}>
                     <p className="md:text-lg lg:text-lg text-md font-semibold text-gray-200">{reply.username}</p>
