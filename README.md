@@ -1,17 +1,50 @@
-# Stump Talk
+
+---
+
+## ✅ **StumpTalk – `README.md`**
+
+```markdown
+# 🏏 StumpTalk
+
+A MERN-based social discussion platform for cricket lovers.
 
 ## 📌 Overview
-Stump Talk is a dynamic and interactive platform designed to foster meaningful discussions on various topics. Whether it's casual conversations or deep debates, users can engage seamlessly and share their thoughts.
+
+**StumpTalk** is a full-stack web app inspired by platforms like X (Twitter), built for cricket fans to create threads, post comments, and access **live scores**, **rankings**, and **player stats** via APIs.
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**: React, Tailwind CSS, Axios  
+**Backend**: Node.js, Express, MongoDB, JWT  
+**Extras**: Cricket Live APIs for match data
+
+---
 
 ## 🚀 Features
-- 🗣️ **Real-time Discussions** – Engage in live conversations.
-- 🔍 **Topic-Based Channels** – Explore discussions by categories.
-- 👥 **User Profiles** – Customize your profile and interact with others.
-- 📜 **Threaded Replies** – Keep discussions structured and clear.
-- 🌙 **Dark Mode Support** – Enjoy a comfortable viewing experience.
 
-## 🛠️ Tech Stack
-- **Frontend:** React, Tailwind CSS
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Authentication:** Firebase/Auth0
+- Signup / Login with JWT
+- Create threads and engage in cricket discussions
+- Live match scores and rankings
+- Player stats and details
+- Responsive design
+- RESTful API integration
+
+---
+
+## 💻 How to Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/ANUJNEGI15072005/stump_talk
+cd stumptalk
+
+cd frontend
+npm install
+npm run dev
+
+cd backend
+npm install
+node index.js
+
