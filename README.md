@@ -1,9 +1,4 @@
 
----
-
-## ✅ **StumpTalk – `README.md`**
-
-```markdown
 # 🏏 StumpTalk
 
 A MERN-based social discussion platform for cricket lovers.
@@ -47,4 +42,3 @@ npm run dev
 cd backend
 npm install
 node index.js
-
