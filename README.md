@@ -32,7 +32,7 @@ A MERN-based social discussion platform for cricket lovers.
 
 ```bash
 # Clone the repository
-git clone https://github.com/ANUJNEGI15072005/stump_talk
+git clone https://github.com/ANUJNEGI15072005/stump_talk.git
 cd stumptalk
 
 cd frontend
