@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 const LiveScore = () => {
     const [liveMatches, setLiveMatches] = useState([]);
 
-    const API_KEY = "21a1c04499mshb0835b11649435fp13cccbjsn813cf0b848c8";
-    const API_HOST = "cricket-api-free-data.p.rapidapi.com";
+    const API_KEY = "21a1c04499mshb0835b11649435fp13cccbjsn813cf0b848c";
+    const API_HOST = " free-cricbuzz-cricket-api.p.rapidapi.com";
 
 
     const fetchLiveMatches = async () => {
         try {
-            const response = await fetch(`https://cricket-api-free-data.p.rapidapi.com/cricket-livescores`, {
+            const response = await fetch(`https://free-cricbuzz-cricket-api.p.rapidapi.com/cricket-livescores`, {
                 method: "GET",
                 headers: {
                     "X-RapidAPI-Key": API_KEY,

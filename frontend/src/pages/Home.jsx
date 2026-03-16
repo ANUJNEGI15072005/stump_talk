@@ -104,7 +104,8 @@ const Home = () => {
 
     return (
         <div className="w-full bg-black min-h-screen text-white p-6">
-            <div className="bg-gray-900 p-4 shadow-md rounded-lg">
+            <h1 className="text-4xl text-center text-white font-bold">Welcome back - {username} </h1>
+            <div className="bg-gray-900 p-4 mt-5 shadow-md rounded-lg">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                     <textarea
                         placeholder="Know something about cricket?"

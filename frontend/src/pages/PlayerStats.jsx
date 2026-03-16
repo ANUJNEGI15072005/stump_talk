@@ -6,6 +6,7 @@ const PlayerStats = () => {
     const [playerData, setPlayerData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [playerName, setPlayerName] = useState("");
 
     const API_HOST = "cricket-live-line-advance.p.rapidapi.com";
     const API_KEY = "67e21b5438msh9dffb14647f0b61p1d8335jsnea46a5b3d1e5";
@@ -36,7 +37,9 @@ const PlayerStats = () => {
 
             const data = await response.json();
             if (data?.response?.items?.length > 0) {
-                return data.response.items[0].pid;
+                const player = data.response.items[0];
+                setPlayerName(player.title);   // store player name
+                return player.pid;
             } else {
                 setError("Player not found.");
                 setLoading(false);
@@ -194,6 +197,9 @@ const PlayerStats = () => {
 
             {playerData && (
                 <div className="w-full max-w-4xl bg-gray-800 p-4 md:p-6 shadow-lg rounded-lg text-center">
+                    <h2 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-4">
+                        {playerName}
+                    </h2>
                     {renderTable(playerData.batting, "batting")}
                     {renderTable(playerData.bowling, "bowling")}
                 </div>

@@ -22,7 +22,7 @@ const Signup = () => {
 
         try {
             const res = await axios.post("https://stumptalk.onrender.com/api/auth/register", formData);
-            alert(res.data.message);
+            // alert(res.data.message);
             navigate("/login");
         } catch (err) {
             setError(err.response?.data?.message || "Something went wrong");
