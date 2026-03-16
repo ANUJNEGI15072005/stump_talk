@@ -28,6 +28,7 @@ const Navbar = () => {
     return (
         <>
             <nav className="bg-black shadow-md px-4 py-2 flex justify-between items-center fixed top-0 w-full z-50 border-b border-gray-700">
+
                 <div className="w-1/3 flex lg:hidden justify-start  items-center">
                     <button
                         onClick={() => setIsSidebarOpen(true)}
